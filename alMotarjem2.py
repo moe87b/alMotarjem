@@ -30,7 +30,7 @@ reddit = praw.Reddit(client_id='2Qv7SGX2aP_3_A',
                     password='tarjem31387875244*')
 subreddit = reddit.subreddit("AlMotarjem")
 
-for comment in subreddit.comments(limit=4):
+for comment in subreddit.comments(limit=20):
     commentBody = comment.body
     
     if( ('!tarjem' in commentBody) and comment.id not in realRes):
