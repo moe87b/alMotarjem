@@ -31,14 +31,13 @@ reddit = praw.Reddit(client_id='2Qv7SGX2aP_3_A',
 subredditsArray = ['AlMotarjem', 'lebanese']
 
 for sub in subredditsArray:
-    subreddit = reddit.subreddit(sub):
+    subreddit = reddit.subreddit(sub)
     for comment in subreddit.comments(limit=20):
         commentBody = comment.body
         
         if( ('!tarjem' in commentBody) and comment.id not in realRes):
-            print("inside")
+            insertsql = "INSERT INTO replied (identifier) VALUES ('"+comment.id+"')"
             if( type(comment.parent()) is praw.models.reddit.submission.Submission):
-                insertsql = "INSERT INTO replied (identifier) VALUES ('"+comment.id+"')"
                 print("replying to post")
                 finalReply = ""
                 title = comment.parent().title
