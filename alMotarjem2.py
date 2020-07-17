@@ -28,7 +28,7 @@ reddit = praw.Reddit(client_id='2Qv7SGX2aP_3_A',
                     user_agent='<leb motarjem>',
                     username='alMotarjem',
                     password='tarjem31387875244*')
-subredditsArray = ['AlMotarjem', 'lebanese']
+subredditsArray = ['AlMotarjem', 'lebanese', 'lebanon']
 
 for sub in subredditsArray:
     subreddit = reddit.subreddit(sub)
@@ -70,7 +70,7 @@ for sub in subredditsArray:
                     comment.reply(finalReply)
                 else:
                     #print("I can only translate arabic text")
-                    comment.reply("I can only translate arabic text")
+                    comment.reply("Sorry, I can only translate from arabic to english  \n\ \n ^(I am a bot, I work using google translate)")
                     cursor.execute(insertsql)
         connection.commit()
 
