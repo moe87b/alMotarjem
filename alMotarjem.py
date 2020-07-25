@@ -43,7 +43,7 @@ for sub in subredditsArray:
                    finalReply = titleReply+" "+bodyReply+" \n \n ^(I am a bot, I work using google translate)"
                    comment.reply(finalReply)                  
                else: 
-                   print("I only translate from english to arabic ^(I am a bot, I work using google translate)")
+                   print("I only translate from arabic to english ^(I am a bot, I work using google translate)")
             else:
                 commentBody = comment.body
                 text = comment.parent().body
@@ -52,6 +52,6 @@ for sub in subredditsArray:
                     translatedText = translator.translate(text).text
                     comment.reply(translatedText+" \n \n ^(I am a bot, I work using google translate)")
                 else:
-                    comment.reply("I can only translate from arabic to english \n \n ^(I am a bot, I work using google translate")
+                    comment.reply("I only translate from arabic to english \n \n ^(I am a bot, I work using google translate")
             firebase.post('/almotarjem-eca52/', comment.id)           
         
