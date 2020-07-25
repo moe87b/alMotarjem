@@ -1,5 +1,4 @@
 praw
 googletrans
 mysql-connector-python
-firebase-python
-requests
+python-firebase 
