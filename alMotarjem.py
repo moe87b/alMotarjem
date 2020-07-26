@@ -40,18 +40,18 @@ for sub in subredditsArray:
                    postTranslation = translator.translate(submissionText).text
                    titleReply = "Title: "+titleTranslation+"\n \n"
                    bodyReply = "Body: "+postTranslation+"\n \n"
-                   finalReply = titleReply+" "+bodyReply+" \n \n ^(I am a bot, I work using google translate)"
+                   finalReply = titleReply+" "+bodyReply+" \n \n ^(I am a bot, I work using google translate \n \n have any questions? visit r/alMotarjem)"
                    comment.reply(finalReply)                  
                else: 
-                   print("I only translate from arabic to english ^(I am a bot, I work using google translate)")
+                   print("I only translate from arabic to english ^(I am a bot, I work using google translate  \n \n have any questions? visit r/alMotarjem)")
             else:
                 commentBody = comment.body
                 text = comment.parent().body
                 language = translator.detect(text)
                 if language.lang =='ar':
                     translatedText = translator.translate(text).text
-                    comment.reply(translatedText+" \n \n ^(I am a bot, I work using google translate)")
+                    comment.reply(translatedText+" \n \n ^(I am a bot, I work using google translate \n \n have any questions? visit r/alMotarjem)")
                 else:
-                    comment.reply("I only translate from arabic to english \n \n ^(I am a bot, I work using google translate")
+                    comment.reply("I only translate from arabic to english \n \n ^(I am a bot, I work using google translate \n \n have any questions? visit r/alMotarjem)")
             firebase.post('/almotarjem-eca52/', comment.id)           
         
