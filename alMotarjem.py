@@ -50,7 +50,7 @@ for sub in subredditsArray:
                 language = translator.detect(text)
                 if language.lang =='ar':
                     translatedText = translator.translate(text).text
-                    comment.reply(translatedText+" \n \n ^(I am a bot, I work using google translate \n \n have any questions? visit r/alMotarjem)")
+                    comment.reply(translatedText+" \n \n ^(I am a bot, I work using google translate. Have any questions? visit r/alMotarjem)")
                 else:
                     comment.reply("I only translate from arabic to english \n \n ^(I am a bot, I work using google translate \n \n have any questions? visit r/alMotarjem)")
             firebase.post('/almotarjem-eca52/', comment.id)           
