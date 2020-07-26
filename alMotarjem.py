@@ -22,7 +22,7 @@ reddit = praw.Reddit(client_id='2Qv7SGX2aP_3_A',
                     username='alMotarjem',
                     password='tarjem31387875244*')
 
-subredditsArray = ['AlMotarjem', 'lebanese', 'lebanon']
+subredditsArray = ['AlMotarjem', 'lebanese', 'lebanon', 'Arabs']
 
 for sub in subredditsArray:
     subreddit = reddit.subreddit(sub)
