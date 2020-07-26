@@ -28,7 +28,7 @@ for sub in subredditsArray:
     subreddit = reddit.subreddit(sub)
     for comment in subreddit.comments(limit=20):
         commentBody = comment.body
-        if('!tarjem' in commentBody and comment.id not in replied):
+        if(('!tarjem' in commentBody or '! tarjem' in commentBody) and comment.id not in replied):
             print(commentBody)
             if( type(comment.parent()) is praw.models.reddit.submission.Submission):
                submissionTitle = comment.parent().title
